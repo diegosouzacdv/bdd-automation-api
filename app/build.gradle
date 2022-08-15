@@ -11,6 +11,9 @@ dependencies {
     implementation 'org.apache.commons:commons-text'
     implementation project(':utilities')
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jsr310', version: '2.13.3'
+    implementation group: 'com.fasterxml.jackson.datatype', name: 'jackson-datatype-jdk8', version: '2.13.3'
 
     testImplementation 'io.cucumber:cucumber-java:7.6.+'
     testImplementation 'io.cucumber:cucumber-junit:7.6.+'

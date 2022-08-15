@@ -3,7 +3,7 @@
 Funcionalidade: Gerenciamento de um usuario na PetStore
 
   Cenario: Cria um usuario na loja
-    Quando faço um POST para v3/user com os seguintes valores:
+    Quando faco um POST para /v3/user com os seguintes valores:
       | id         | 10               |
       | username   | rafael           |
       | firstName  | rafael           |
@@ -12,24 +12,12 @@ Funcionalidade: Gerenciamento de um usuario na PetStore
       | password   | 12345            |
       | phone      | 54321            |
       | userStatus | 1                |
-    Entao quando faço um GET para /v3/user/rafael, o usuário criado é retornado
-
-  Cenario: Cria um usuario na loja usando docstring
-    Quando faço um POST para v3/user com os seguintes docstring:
-  """
-  json {
-    "id": 10,
-    "username": "theUser",
-    "firtName": "John",
-    "lastName": "James",
-    "email": "james@email.com",
-    "phone": "12345",
-    "userStatus": 1
-  }
-  """
-    Entao quando faço um GET para /v3/user/rafael, o usuário criado é retornado
+    Entao quando faco um GET para /v3/user/rafael, o usuario criado e retornado
 
 
-  Cenario: Cria usuário na loja refletindo o negócio
-    Quando crio um usuário
-    Entao o usuário é salvo no sistema
+
+
+
+  Cenario: Cria usuario na loja refletindo o negocio
+    Quando crio um usuario
+    Entao o usuario e salvo no sistema
