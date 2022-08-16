@@ -1,4 +1,4 @@
-package bdd.automation.api.app.steps;
+package bdd.automation.api.steps;
 
 import io.cucumber.java.Before;
 import io.restassured.RestAssured;
