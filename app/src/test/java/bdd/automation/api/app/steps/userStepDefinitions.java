@@ -1,3 +1,6 @@
+package bdd.automation.api.app.steps;
+
+import io.cucumber.docstring.DocString;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import io.restassured.http.ContentType;
@@ -20,22 +23,32 @@ public class userStepDefinitions {
         expectedUser = user;
 
         given()
-                .contentType(ContentType.JSON)
                 .body(user)
                 .when()
-                .post("http://localhost:12345/api" + endpoint)
+                .post(endpoint)
                 .then()
-                .contentType(ContentType.JSON)
                 .statusCode(HttpStatus.SC_OK);
     }
 
     @Entao("quando faco um GET para {word}, o usuario criado e retornado")
     public void quandoFacoUmGETParaVUserRafaelOUsuarioCriadoERetornado(String endpoint) {
         when()
-                .get("http://localhost:12345/api" + endpoint)
+                .get(endpoint)
                 .then()
-                .contentType(ContentType.JSON)
                 .statusCode(HttpStatus.SC_OK)
                 .body("username", is(expectedUser.get("username")));
+    }
+
+    @Quando("eu faco um POST para {word} com a seguinte docString:")
+    public void euFacoUmPOSTParaVUserComASeguinteDocString(String endpoint, DocString docString) {
+
+        expectedUser.put("username", "theUser");
+
+        given()
+                .body(docString.getContent())
+                .when()
+                .post(endpoint)
+                .then()
+                .statusCode(HttpStatus.SC_OK);
     }
 }
