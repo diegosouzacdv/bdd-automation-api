@@ -30,6 +30,11 @@ dependencies {
 
 }
 
+
+test {
+    useJUnitPlatform()
+}
+
 application {
     // Define the main class for the application.
     mainClass = 'bdd.automation.api.app.App'
